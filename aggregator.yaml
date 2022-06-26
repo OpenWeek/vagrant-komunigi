@@ -1,0 +1,419 @@
+# WARNING: git >= 2.29 is required
+
+# odoo source
+
+./odoo:
+    defaults:
+        shallow-since: 2022-01-01
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/OCB
+        oca: https://github.com/OCA/OCB
+    merges:
+        - coopiteasy 12.0
+#        - coopiteasy 12.0-belgian-locale
+        - coopiteasy 12.0-set-pos-cash-rounding-autoinstall-false
+        - coopiteasy 12.0-fix-remote_addr-header
+
+    target: coopiteasy 12.0-target
+
+# Coop IT Easy modules
+
+./coopiteasy/addons:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/addons
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./coopiteasy/cie-custom:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/cie-custom
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./coopiteasy/cie-imported-modules:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/cie-imported-modules
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./coopiteasy/cie-partner-contact:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/cie-partner-contact
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./coopiteasy/cie-pos:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/cie-pos
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./coopiteasy/cie-stock:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/cie-stock
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./coopiteasy/cie-timesheet:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/cie-timesheet
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./coopiteasy/obeesdoo:
+    remotes:
+        beescoop: https://github.com/beescoop/obeesdoo
+    merges:
+        - beescoop 12.0
+    target: beescoop 12.0-target
+
+./coopiteasy/vertical-cooperative:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/vertical-cooperative
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+# oca modules
+
+./oca/account-analytic:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/account-analytic
+        oca: https://github.com/oca/account-analytic
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/account-financial-reporting:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/account-financial-reporting
+        oca: https://github.com/oca/account-financial-reporting
+    merges:
+        - coopiteasy 12.0
+        - oca refs/pull/688/head  # coopiteasy account_financial_report_date_range
+    target: coopiteasy 12.0-target
+
+./oca/account-financial-tools:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/account-financial-tools
+        oca: https://github.com/oca/account-financial-tools
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/account-fiscal-rule:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/account-fiscal-rule
+        oca: https://github.com/oca/account-fiscal-rule
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/account-invoice-reporting:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/account-invoice-reporting
+        oca: https://github.com/oca/account-invoice-reporting
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/account-invoicing:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/account-invoicing
+        oca: https://github.com/oca/account-invoicing
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/account-payment:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/account-payment
+        oca: https://github.com/oca/account-payment
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/account-reconcile:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/account-reconcile
+        oca: https://github.com/oca/account-reconcile
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/bank-payment:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/bank-payment
+        oca: https://github.com/oca/bank-payment
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/bank-statement-import:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/bank-statement-import
+        oca: https://github.com/oca/bank-statement-import
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/calendar:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/calendar
+        oca: https://github.com/oca/calendar
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/credit-control:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/credit-control
+        oca: https://github.com/oca/credit-control
+    merges:
+        - coopiteasy 12.0
+        - oca refs/pull/184/head  # coopiteasy 12.0-fix-mig-script-account_credit_control
+    target: coopiteasy 12.0-target
+
+./oca/crm:
+    defaults:
+        since: 2020-01-01
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/crm
+        oca: https://github.com/oca/crm
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/delivery-carrier:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/delivery-carrier
+        oca: https://github.com/oca/delivery-carrier
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/e-commerce:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/e-commerce
+        oca: https://github.com/oca/e-commerce
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/l10n-belgium:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/l10n-belgium
+        oca: https://github.com/oca/l10n-belgium
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/mis-builder:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/mis-builder
+        oca: https://github.com/oca/mis-builder
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/partner-contact:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/partner-contact
+        oca: https://github.com/oca/partner-contact
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/pos:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/pos
+        oca: https://github.com/oca/pos
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/product-attribute:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/product-attribute
+        oca: https://github.com/oca/product-attribute
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/product-pack:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/product-pack
+        oca: https://github.com/oca/product-pack
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/product-variant:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/product-variant
+        oca: https://github.com/oca/product-variant
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/purchase-workflow:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/purchase-workflow
+        oca: https://github.com/oca/purchase-workflow
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/queue:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/queue
+        oca: https://github.com/oca/queue
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/reporting-engine:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/reporting-engine
+        oca: https://github.com/oca/reporting-engine
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/rest-framework:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/rest-framework
+        oca: https://github.com/oca/rest-framework
+    merges:
+        - coopiteasy 12.0
+        - coopiteasy 12.0-fix-missing-make_json_response
+    target: coopiteasy 12.0-target
+
+./oca/sale-reporting:
+    defaults:
+        since: 2020-01-01
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/sale-reporting
+        oca: https://github.com/oca/sale-reporting
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/sale-workflow:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/sale-workflow
+        oca: https://github.com/oca/sale-workflow
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/server-auth:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/server-auth
+        oca: https://github.com/oca/server-auth
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/server-env:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/server-env
+        oca: https://github.com/oca/server-env
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/server-tools:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/server-tools
+        oca: https://github.com/oca/server-tools
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/server-ux:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/server-ux
+        oca: https://github.com/oca/server-ux
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/social:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/social
+        oca: https://github.com/oca/social
+    merges:
+        - coopiteasy 12.0
+        - oca refs/pull/658/head  # mail_edit
+    target: coopiteasy 12.0-target
+
+./oca/stock-logistics-barcode:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/stock-logistics-barcode
+        oca: https://github.com/OCA/stock-logistics-barcode
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/stock-logistics-warehouse:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/stock-logistics-warehouse
+        oca: https://github.com/oca/stock-logistics-warehouse
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/stock-logistics-workflow:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/stock-logistics-workflow
+        oca: https://github.com/oca/stock-logistics-workflow
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/web:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/web
+        oca: https://github.com/oca/web
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+./oca/website:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/website
+        oca: https://github.com/oca/website
+    merges:
+        - coopiteasy 12.0
+    target: coopiteasy 12.0-target
+
+# other remotes
+
+./grap/grap-odoo-custom-account:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/grap-odoo-custom-account
+        grap: https://github.com/grap/grap-odoo-custom-account
+    merges:
+        - coopiteasy 12.0
+        - coopiteasy 12.0-imp-pos_change_sale_move
+    target: coopiteasy 12.0-target
+
+./grap/grap-odoo-incubator:
+    remotes:
+        coopiteasy: https://github.com/coopiteasy/grap-odoo-incubator
+        grap: https://github.com/grap/grap-odoo-incubator
+        quentinDupont: https://github.com/quentinDupont/grap-odoo-incubator
+        legalsylvain: https://github.com/legalsylvain/grap-odoo-incubator
+    merges:
+        - coopiteasy 12.0
+        - legalsylvain 12.0-IMP-product_print_category-adapt-to-template-coop-it-easy
+    target: coopiteasy 12.0-target
+
